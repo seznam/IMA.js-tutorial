@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>hail-night</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M84.4381919,36.8199268 C89.4034265,36.2791015 93.3575762,32.073644 93.3575762,26.9206606 C93.3575762,22.2533384 90.1154583,18.2074243 85.8147866,17.3296649 C84.6370333,7.60292198 76.5530996,0 66.7481588,0 C59.8525269,0 53.8081686,3.68951015 50.4167878,9.28326617 C50.3329262,9.28164369 50.2495922,9.2583882 50.1652032,9.2583882 C42.8940405,9.2583882 37,15.58334 37,23.0391575 C37,30.2332156 42.4879187,36.2791015 49.4051753,36.8199268 L84.4381919,36.8199268 Z" id="path-2"></path>
+        <path d="M16.5303618,51.6663289 L56.6323864,51.6663289 C63.9999628,51.6663289 70.0013478,45.4776248 70.0013478,38.1228435 C70.0013478,31.9341393 65.9374834,26.7621557 60.2221101,25.0767563 C60.0707739,19.5615268 55.5036123,15.1589348 49.8784854,15.1589348 C48.2436374,15.1589348 46.7032009,15.5556203 45.3279848,16.2215585 C42.8954975,10.5247717 37.1856778,6.53256766 30.5289653,6.53256766 C23.2703787,6.53256766 17.139872,11.292108 15.1551457,17.8185772 C6.5754908,18.8414639 0,25.9489162 0,34.6924392 C0,43.8532012 7.12599378,51.6663289 16.5303618,51.6663289" id="path-3"></path>
+        <filter x="-24.3%" y="-28.8%" width="148.6%" height="175.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Weather-icons" transform="translate(-1342.000000, -136.000000)">
+            <g id="icons" transform="translate(17.000000, 16.000000)">
+                <g id="night" transform="translate(0.000000, 120.000000)">
+                    <g id="hail" transform="translate(1327.000000, 6.000000)">
+                        <g id="cloud">
+                            <use fill="#2D6CB5" xlink:href="#path-2"></use>
+                            <use fill-opacity="0.200000018" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        </g>
+                        <g id="cloud">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                        <polygon id="lightning" fill="#FCC02E" points="31.5889171 34.4444477 26.695694 48.3165568 34.3402585 48.3165571 29.5546211 61.7624579 44.4928233 42.6451826 36.2603338 42.4622312 39.1269147 34.6286786"></polygon>
+                        <polygon id="Rectangle" fill-opacity="0.5" fill="#FFFFFF" points="64.5256831 54 73.4585476 54.9965647 71.9328645 70.4042937 63 69.407729"></polygon>
+                        <circle id="Oval-2-Copy" fill="#FFFFFF" cx="67.5" cy="69.5" r="4.5"></circle>
+                        <polygon id="Rectangle" fill-opacity="0.5" fill="#FFFFFF" points="12.5256831 58 21.4585476 58.9965647 19.9328645 74.4042937 11 73.407729"></polygon>
+                        <circle id="Oval-2-Copy" fill="#FFFFFF" cx="15.5" cy="73.5" r="4.5"></circle>
+                        <polygon id="Rectangle" fill-opacity="0.5" fill="#FFFFFF" points="38.5256831 64 47.4585476 64.9965647 45.9328645 80.4042937 37 79.407729"></polygon>
+                        <circle id="Oval-2-Copy" fill="#FFFFFF" cx="41.5" cy="79.5" r="4.5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

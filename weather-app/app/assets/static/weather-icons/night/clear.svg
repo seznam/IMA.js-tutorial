@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="97px" viewBox="0 0 97 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>clear-night</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0.168860523,59.9212536 C10.8581998,54.8696624 18.248484,44.0309471 18.248484,31.4750987 C18.248484,18.9192504 10.8581998,8.0805351 0.168860523,3.02894391 C4.27860926,1.08674993 8.8760194,0 13.7285781,0 C31.2025036,0 45.3679191,14.0918817 45.3679191,31.4750987 C45.3679191,48.8583158 31.2025036,62.9501975 13.7285781,62.9501975 C8.8760194,62.9501975 4.27860926,61.8634475 0.168860523,59.9212536 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Weather-icons" transform="translate(-17.000000, -136.000000)">
+            <g id="icons" transform="translate(17.000000, 16.000000)">
+                <g id="night" transform="translate(0.000000, 120.000000)">
+                    <g id="clear" transform="translate(25.781355, 17.956902)">
+                        <g id="moon">
+                            <use fill="#FFFFFF" xlink:href="#path-2"></use>
+                            <use fill-opacity="0.300000012" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                            <use fill-opacity="0.5" fill="#3F8AE9" style="mix-blend-mode: color;" xlink:href="#path-2"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

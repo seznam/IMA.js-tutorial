@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56 (81588) - https://sketch.com -->
+    <title>cloudy-night</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M32.9119186,49.1806515 C41.630411,45.0345342 47.6581115,36.1386075 47.6581115,25.8333358 C47.6581115,15.528064 41.630411,6.6321373 32.9119186,2.48602 C36.2639325,0.891955132 40.0136951,0 43.9715633,0 C58.2237338,0 69.7774008,11.5659784 69.7774008,25.8333358 C69.7774008,40.1006931 58.2237338,51.6666715 43.9715633,51.6666715 C40.0136951,51.6666715 36.2639325,50.7747164 32.9119186,49.1806515 Z" id="path-2"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M40.3145802,48.7770373 C45.5592956,48.7770373 49.8314679,44.3798001 49.8314679,39.1540345 C49.8314679,34.7567973 46.9385475,31.0819669 42.8699767,29.8844463 C42.7622458,25.9657305 39.5110461,22.8375731 35.5067184,22.8375731 C34.3429283,22.8375731 33.2463464,23.1194285 32.267379,23.5925952 C30.5357779,19.5448783 26.4711605,16.7083122 21.7324837,16.7083122 C16.5653543,16.7083122 12.2012648,20.0900909 10.7884088,24.727319 C4.68085786,25.4541069 0,30.5041388 0,36.716642 C0,43.2256045 5.07274133,48.7770373 11.7673762,48.7770373 L40.3145802,48.7770373 Z" id="path-4"></path>
+        <path d="M35.5303618,61.1337613 L75.6323864,61.1337613 C82.9999628,61.1337613 89.0013478,54.9450571 89.0013478,47.5902758 C89.0013478,41.4015716 84.9374834,36.229588 79.2221101,34.5441887 C79.0707739,29.0289591 74.5036123,24.6263671 68.8784854,24.6263671 C67.2436374,24.6263671 65.7032009,25.0230526 64.3279848,25.6889909 C61.8954975,19.9922041 56.1856778,16 49.5289653,16 C42.2703787,16 36.139872,20.7595403 34.1551457,27.2860095 C25.5754908,28.3088962 19,35.4163486 19,44.1598715 C19,53.3206336 26.1259938,61.1337613 35.5303618,61.1337613" id="path-5"></path>
+        <filter x="-22.1%" y="-25.5%" width="144.3%" height="168.7%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Weather-icons" transform="translate(-284.000000, -137.000000)">
+            <g id="icons" transform="translate(17.000000, 16.000000)">
+                <g id="night" transform="translate(0.000000, 120.000000)">
+                    <g id="cloudy" transform="translate(269.000000, 23.000000)">
+                        <g id="moon">
+                            <use fill="#FFFFFF" xlink:href="#path-2"></use>
+                            <use fill-opacity="0.300000012" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                            <use fill-opacity="0.5" fill="#3F8AE9" style="mix-blend-mode: color;" xlink:href="#path-2"></use>
+                        </g>
+                        <g id="cloud">
+                            <use fill="#E5F1FF" xlink:href="#path-4"></use>
+                            <use fill-opacity="0.200000018" fill="url(#linearGradient-3)" xlink:href="#path-4"></use>
+                        </g>
+                        <g id="cloud">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

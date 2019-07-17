@@ -1,0 +1,37 @@
+.forecast-detail {
+    margin: 0px 20px;
+    text-align: center;
+
+    &__ {
+
+        &time {}
+
+        &temp {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        &precip {
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 17px;
+                width: 17px;
+                margin-right: 3px;
+            }
+
+            &__rain,
+            &__snow {
+                display: flex;
+                align-items: center;
+            }
+
+            &__rain {
+                margin-right: 10px;
+            }
+        }
+    }
+}

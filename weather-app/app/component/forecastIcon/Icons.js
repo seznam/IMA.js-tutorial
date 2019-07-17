@@ -1,0 +1,51 @@
+import ForecastIconType from 'app/constant/ForecastIconType';
+
+export default {
+    [ForecastIconType.CLEAR]: ['clear'],
+    [ForecastIconType.FOG]: ['mist'],
+
+    [ForecastIconType.ALMOST_CLEAR]: ['almost-clear'],
+    [ForecastIconType.ALMOST_CLEAR_RAIN]: ['almost-clear', 'rain'],
+    [ForecastIconType.ALMOST_CLEAR_STORM]: ['almost-clear', 'storm'],
+    [ForecastIconType.ALMOST_CLEAR_FREEZING_RAIN]: ['almost-clear', 'shower-rain'],
+    [ForecastIconType.ALMOST_CLEAR_SNOW]: ['almost-clear', 'snow'],
+    [ForecastIconType.ALMOST_CLEAR_WET_SNOW]: ['almost-clear', 'snow'],
+    [ForecastIconType.ALMOST_CLEAR_RAIN_SNOW]: ['almost-clear', 'shower-rain'],
+    [ForecastIconType.ALMOST_CLEAR_HAIL]: ['almost-clear', 'hail'],
+
+    [ForecastIconType.PARTLY_CLOUDY]: ['cloudy', 'cloudy'],
+    [ForecastIconType.PARTLY_CLOUDY_RAIN]: ['cloudy', 'rain'],
+    [ForecastIconType.PARTLY_CLOUDY_STORM]: ['cloudy', 'storm'],
+    [ForecastIconType.PARTLY_CLOUDY_FREEZING_RAIN]: ['cloudy', 'shower-rain'],
+    [ForecastIconType.PARTLY_CLOUDY_SNOW]: ['cloudy', 'snow'],
+    [ForecastIconType.PARTLY_CLOUDY_WET_SNOW]: ['cloudy', 'snow'],
+    [ForecastIconType.PARTLY_CLOUDY_RAIN_SNOW]: ['cloudy', 'shower-rain'],
+    [ForecastIconType.PARTLY_CLOUDY_HAIL]: ['cloudy', 'hail'],
+
+    [ForecastIconType.CLOUDY]: ['cloudy', 'cloudy'],
+    [ForecastIconType.CLOUDY_RAIN]: ['cloudy', 'rain'],
+    [ForecastIconType.CLOUDY_STORM]: ['cloudy', 'storm'],
+    [ForecastIconType.CLOUDY_FREEZING_RAIN]: ['cloudy', 'shower-rain'],
+    [ForecastIconType.CLOUDY_SNOW]: ['cloudy', 'snow'],
+    [ForecastIconType.CLOUDY_WET_SNOW]: ['cloudy', 'snow'],
+    [ForecastIconType.CLOUDY_RAIN_SNOW]: ['cloudy', 'shower-rain'],
+    [ForecastIconType.CLOUDY_HAIL]: ['cloudy', 'hail'],
+
+    [ForecastIconType.ALMOST_OVERCAST]: ['almost-overcast', 'almost-overcast'],
+    [ForecastIconType.ALMOST_OVERCAST_RAIN]: ['almost-overcast', 'rain'],
+    [ForecastIconType.ALMOST_OVERCAST_STORM]: ['almost-overcast', 'storm'],
+    [ForecastIconType.ALMOST_OVERCAST_FREEZING_RAIN]: ['almost-overcast', 'shower-rain'],
+    [ForecastIconType.ALMOST_OVERCAST_SNOW]: ['almost-overcast', 'snow'],
+    [ForecastIconType.ALMOST_OVERCAST_WET_SNOW]: ['almost-overcast', 'snow'],
+    [ForecastIconType.ALMOST_OVERCAST_RAIN_SNOW]: ['almost-overcast', 'shower-rain'],
+    [ForecastIconType.ALMOST_OVERCAST_HAIL]: ['almost-overcast', 'hail'],
+
+    [ForecastIconType.OVERCAST]: ['overcast', 'overcast'],
+    [ForecastIconType.OVERCAST_RAIN]: ['overcast', 'rain'],
+    [ForecastIconType.OVERCAST_STORM]: ['overcast', 'storm'],
+    [ForecastIconType.OVERCAST_FREEZING_RAIN]: ['overcast', 'shower-rain'],
+    [ForecastIconType.OVERCAST_SNOW]: ['overcast', 'snow'],
+    [ForecastIconType.OVERCAST_WET_SNOW]: ['overcast', 'snow'],
+    [ForecastIconType.OVERCAST_RAIN_SNOW]: ['overcast', 'shower-rain'],
+    [ForecastIconType.OVERCAST_HAIL]: ['overcast', 'hail'],
+}
