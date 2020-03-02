@@ -74,7 +74,7 @@ module.exports = (() => {
         path: '/api',
         server: 'https://wapi.pocasi.seznam.cz',
         options: {
-          proxyReqPathResolver: function (req) {
+          proxyReqPathResolver: function(req) {
             const queryString = req.url.split('?')[1];
 
             return '/v2/forecast' + (queryString ? '?' + queryString : '');
@@ -85,7 +85,7 @@ module.exports = (() => {
         path: '/geo',
         server: 'https://api.mapy.cz/',
         options: {
-          proxyReqPathResolver: function (req) {
+          proxyReqPathResolver: function(req) {
             const queryString = req.url.split('?')[1];
 
             return '/geocode' + (queryString ? '?' + queryString : '');
@@ -96,7 +96,7 @@ module.exports = (() => {
         path: '/suggest',
         server: 'https://mapy.cz',
         options: {
-          proxyReqPathResolver: function (req) {
+          proxyReqPathResolver: function(req) {
             const queryString = req.url.split('?')[1];
 
             return '/suggest' + (queryString ? '?' + queryString : '');

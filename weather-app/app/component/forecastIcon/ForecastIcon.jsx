@@ -1,6 +1,6 @@
+import { AbstractComponent } from '@ima/core';
 import React from 'react';
 import PropTypes from 'prop-types';
-import AbstractComponent from 'ima/page/AbstractComponent';
 
 import ForecastIconType from 'app/constant/ForecastIconType';
 import Icons from './Icons';

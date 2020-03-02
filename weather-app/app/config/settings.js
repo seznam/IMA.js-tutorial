@@ -55,7 +55,7 @@ export default (ns, oc, config) => {
           title: 'Praha, okres Hlavní město Praha, kraj Hlavní město Praha, Česko',
           type: 'muni',
           lat: 14.4395213,
-          lon: 50.0720383,
+          lon: 50.0720383
         }
       }
     },
@@ -81,16 +81,14 @@ export default (ns, oc, config) => {
             '/static/js/shim.js' + versionStamp,
             '/static/js/vendor.client.js' + versionStamp,
             `/static/js/locale/${config.$Language}.js${versionStamp}`,
-            '/static/js/app.client.js' + versionStamp,
-            '/static/js/hot.reload.js' + versionStamp
+            '/static/js/app.client.js' + versionStamp
           ],
           esScripts: [
             '/static/js/polyfill.es.js' + versionStamp,
             '/static/js/shim.es.js' + versionStamp,
             '/static/js/vendor.client.es.js' + versionStamp,
             `/static/js/locale/${config.$Language}.js${versionStamp}`,
-            '/static/js/app.client.es.js' + versionStamp,
-            '/static/js/hot.reload.js' + versionStamp
+            '/static/js/app.client.es.js' + versionStamp
           ]
         }
       }

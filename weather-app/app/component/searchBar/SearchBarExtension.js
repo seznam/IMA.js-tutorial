@@ -1,5 +1,4 @@
-import AbstractExtension from 'ima/extension/AbstractExtension';
-import Router from 'ima/router/Router';
+import { AbstractExtension, Router } from '@ima/core';
 
 import SuggestService from 'app/model/suggest/SuggestService';
 

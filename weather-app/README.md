@@ -5,4 +5,4 @@
 - `static get propTypes()`
 - SVG ikony a assety
 - SearchBarExtension - použití extension pro komponentu
-- SearchBar - ima-plugin-select
+- SearchBar - @ima/plugin-select

@@ -1,6 +1,6 @@
+import { AbstractPureComponent } from '@ima/core';
 import React from 'react';
 import PropTypes from 'prop-types';
-import AbstractPureComponent from 'ima/page/AbstractPureComponent';
 
 import ForecastIcon from 'app/component/forecastIcon/ForecastIcon';
 

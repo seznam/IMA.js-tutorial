@@ -1,7 +1,7 @@
 'use strict';
 
-require('ima/polyfill/imaLoader.js');
-require('ima/polyfill/imaRunner.js');
+require('@ima/core/polyfill/imaLoader.js');
+require('@ima/core/polyfill/imaRunner.js');
 
 // Node
 let cluster = require('cluster');
@@ -10,7 +10,7 @@ let os = require('os');
 global.appRoot = path.resolve(__dirname);
 
 // IMA server
-let imaServer = require('ima-server');
+let imaServer = require('@ima/server');
 
 let clientApp = imaServer.clientApp;
 let urlParser = imaServer.urlParser;
@@ -31,19 +31,30 @@ let helmet = require('helmet');
 let errorToJSON = require('error-to-json');
 let proxy = require('express-http-proxy');
 
-process.on('uncaughtException', (error) => {
-	logger.error(`Uncaught Exception:\n${errorToJSON(error)}`);
+function errorToString(error) {
+  const jsonError = errorToJSON(error);
+  let errorString =
+    jsonError && jsonError.message ? jsonError.message : 'Uknown error message';
+
+  try {
+    errorString = JSON.stringify(jsonError);
+  } catch (e) {
+    logger.error(e.message);
+  }
+
+  return errorString;
+}
+
+process.on('uncaughtException', error => {
+  logger.error(`Uncaught Exception:\n${errorToString(error)}`);
 });
 
-process.on('unhandledRejection', (error) => {
-	logger.error(`Unhandled promise rejection:\n${errorToJSON(error)}`);
+process.on('unhandledRejection', error => {
+  logger.error(`Unhandled promise rejection:\n${errorToString(error)}`);
 });
 
 function renderApp(req, res, next) {
-  if (
-    req.headers['x-moz'] &&
-    req.headers['x-moz'] === 'prefetch'
-  ) {
+  if (req.headers['x-moz'] && req.headers['x-moz'] === 'prefetch') {
     res.status(204);
     res.send();
 
@@ -123,9 +134,18 @@ function runNodeApp() {
     ) // for parsing multipart/form-data
     .use(cookieParser())
     .use(methodOverride())
-    .use(environment.$Proxy.path, proxy(environment.$Proxy.server, environment.$Proxy.options))
-    .use(environment.GeoCoderProxy.path + '/', proxy(environment.GeoCoderProxy.server, environment.GeoCoderProxy.options))
-    .use(environment.SuggestProxy.path + '/', proxy(environment.SuggestProxy.server, environment.SuggestProxy.options))
+    .use(
+      environment.$Proxy.path,
+      proxy(environment.$Proxy.server, environment.$Proxy.options)
+    )
+    .use(
+      environment.GeoCoderProxy.path + '/',
+      proxy(environment.GeoCoderProxy.server, environment.GeoCoderProxy.options)
+    )
+    .use(
+      environment.SuggestProxy.path + '/',
+      proxy(environment.SuggestProxy.server, environment.SuggestProxy.options)
+    )
     .use(urlParser)
     .use(renderApp)
     .use(errorHandler)

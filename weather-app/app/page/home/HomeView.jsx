@@ -1,91 +1,83 @@
-import PropTypes from 'prop-types';
+import { AbstractComponent } from '@ima/core';
 import React, { Fragment } from 'react';
-import AbstractComponent from 'ima/page/AbstractComponent';
-import { Loader } from 'ima-ui-atoms';
+import { Loader } from '@ima/plugin-atoms';
 
 import ForecastDay from 'app/component/forecastDay/ForecastDay';
 import ForecastDetail from 'app/component/forecastDetail/ForecastDetail';
 import SearchBar from 'app/component/searchBar/SearchBar';
 
 export default class HomeView extends AbstractComponent {
+  constructor(props, context) {
+    super(props, context);
 
-	constructor(props, context) {
-		super(props, context);
+    this.state = {
+      activeDay: 0
+    };
+  }
 
-		this.state = {
-			activeDay: 0
-		};
-	}
+  render() {
+    return <div className="container">{this._renderPlaceAndForecast()}</div>;
+  }
 
-	render() {
-		return (
-			<div className="container">
-				{this._renderPlaceAndForecast()}
-			</div>
-		);
-	}
+  _renderPlaceAndForecast() {
+    const { forecast, location } = this.props;
+    const { activeDay } = this.state;
 
-	_renderPlaceAndForecast() {
-		const { forecast, location } = this.props;
-		const { activeDay } = this.state;
+    if (!forecast || !location) {
+      return <Loader />;
+    }
 
-		if (!forecast || !location) {
-			return <Loader />;
-		}
+    return (
+      <Fragment>
+        <div className="location">
+          <h1 className="location__title">{location.title}</h1>
+        </div>
+        <div className="forecast-days">
+          {forecast.daily.map((day, index) => (
+            <ForecastDay
+              key={index}
+              forecast={day}
+              place={forecast.place}
+              isActive={index === activeDay}
+              onClick={event => this.onDayClick(event, index)}
+            />
+          ))}
+        </div>
+        {this._renderDetailedForecast()}
+      </Fragment>
+    );
+  }
 
-		return (
-			<Fragment>
-				<div className="location">
-					<h1 className="location__title">{location.title}</h1>
-				</div>
-				<div className="forecast-days">
-					{forecast.daily.map((day, index) => (
-						<ForecastDay
-							key={index}
-							forecast={day}
-							place={forecast.place}
-							isActive={index === activeDay}
-							onClick={event => this.onDayClick(event, index)} />
-					))}
-				</div>
-				{this._renderDetailedForecast()}
-			</Fragment>
-		);
-	}
+  _renderDetailedForecast() {
+    const { forecastDetail, forecastDetailLoading } = this.props;
+    const { activeDay } = this.state;
 
-	_renderDetailedForecast() {
-		const { forecastDetail, forecastDetailLoading } = this.props;
-		const { activeDay } = this.state;
+    if (forecastDetailLoading) {
+      return <Loader />;
+    }
 
-		if (forecastDetailLoading) {
-			return <Loader />;
-		}
+    return (
+      <div className={this.cssClasses('detail')}>
+        <h4 className={this.cssClasses('detail__title')}>Detail dne</h4>
 
-		return (
-			<div className={this.cssClasses('detail')}>
-				<h4 className={this.cssClasses('detail__title')}>Detail dne</h4>
+        <div className={this.cssClasses('detail__list')}>
+          {forecastDetail
+            .filter(day => day.dayId === activeDay)
+            .map((day, index) => (
+              <ForecastDetail key={activeDay + index} {...day} />
+            ))}
+        </div>
+      </div>
+    );
+  }
 
-				<div className={this.cssClasses('detail__list')}>
-					{forecastDetail
-						.filter(day => day.dayId === activeDay)
-						.map((day, index) => (
-							<ForecastDetail
-								key={activeDay + index}
-								{...day} />
-						))
-					}
-				</div>
-			</div>
-		)
-	}
+  onDayClick(event, index) {
+    event.preventDefault();
 
-	onDayClick(event, index) {
-		event.preventDefault();
+    const { forecast } = this.props;
 
-		const { forecast } = this.props;
-
-		if (forecast.daily[index] !== undefined) {
-			this.setState({ activeDay: index });
-		}
-	}
+    if (forecast.daily[index] !== undefined) {
+      this.setState({ activeDay: index });
+    }
+  }
 }
