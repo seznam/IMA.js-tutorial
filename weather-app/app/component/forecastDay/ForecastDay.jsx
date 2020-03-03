@@ -22,7 +22,7 @@ export default class ForecastDay extends AbstractPureComponent {
 				pressureMin: PropTypes.number,
 				rhMax: PropTypes.number,
 				rhMin: PropTypes.number,
-				snowPrecip: PropTypes.string,
+				snowPrecip: PropTypes.number,
 				summary: PropTypes.string,
 				sunrise: PropTypes.string,
 				sunset: PropTypes.string,
@@ -59,7 +59,7 @@ export default class ForecastDay extends AbstractPureComponent {
 				}) }
 				onClick={event => onClick(event)}>
 				<h3 className = { this.cssClasses('forecast-day__date') }>
-					{ `${date.getDate()}. ${date.getMonth()}.` }
+					{ `${date.getDate()}. ${date.getMonth() + 1}.` }
 				</h3>
 				<span className = { this.cssClasses('forecast-day__temp') }>
 					{ Math.round(forecast.tempMin) } - { Math.round(forecast.tempMax) } °C
@@ -70,7 +70,7 @@ export default class ForecastDay extends AbstractPureComponent {
 				<div className = { this.cssClasses('forecast-day__icon') }>
 					{ this._renderIcon() }
 				</div>
-			</div> 
+			</div>
     	);
 	}
 

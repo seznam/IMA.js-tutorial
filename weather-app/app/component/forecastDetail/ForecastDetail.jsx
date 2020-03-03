@@ -23,8 +23,6 @@ export default class ForecastDetail extends AbstractPureComponent {
 		const { localDate, localTime } = this.props;
 		const date = new Date(`${localDate}T${localTime}`);
 
-		console.log(this.props);
-
 		return (
 			<div className = { this.cssClasses('forecast-detail') }>
 				<h3 className = { this.cssClasses('forecast-detail__time') }>
