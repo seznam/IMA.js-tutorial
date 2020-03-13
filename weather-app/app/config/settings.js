@@ -54,8 +54,8 @@ export default (ns, oc, config) => {
         defaultLocation: {
           title: 'Praha, okres Hlavní město Praha, kraj Hlavní město Praha, Česko',
           type: 'muni',
-          lat: 14.4395213,
-          lon: 50.0720383
+          lat: 50.0720383,
+          lon: 14.4395213
         }
       }
     },
