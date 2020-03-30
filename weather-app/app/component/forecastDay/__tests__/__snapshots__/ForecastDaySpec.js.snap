@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastDay can be rendered 1`] = `
+<div
+  className="forecast-day forecast-day--"
+  onClick={[Function]}
+>
+  <h3
+    className="forecast-day__date"
+  >
+    18. 3.
+  </h3>
+  <span
+    className="forecast-day__temp"
+  >
+    5
+     - 
+    10
+     °C
+  </span>
+  <div
+    className="forecast-day__sunrise-sunset"
+  >
+    <span>
+      6:00
+    </span>
+    —
+    <span>
+      20:00
+    </span>
+  </div>
+  <div
+    className="forecast-day__icon"
+  >
+    <ForecastDay
+      icon={0}
+      isDay={true}
+    />
+  </div>
+</div>
+`;
