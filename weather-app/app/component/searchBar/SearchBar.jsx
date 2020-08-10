@@ -1,7 +1,7 @@
 import { AbstractComponent } from '@ima/core';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { select } from '@ima/plugin-select';
+import select from '@ima/plugin-select';
 
 const SEARCH_DEBOUNCE_TIME = 250; //ms
 
@@ -23,13 +23,22 @@ class SearchBar extends AbstractComponent {
       suggestActive: false
     };
 
+    this._searchBarRef = React.createRef();
     this._searchInputRef = React.createRef();
     this._searchTimeout = null;
+
+    this._boundOnSearchOutsizeClick = this.onSearchOutsideClick.bind(this);
   }
 
   componentDidMount() {
     const { autoFocus } = this.props;
     autoFocus && this._searchInputRef.current.focus();
+
+    document.addEventListener('mouseup', this._boundOnSearchOutsizeClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mouseup', this._boundOnSearchOutsizeClick);
   }
 
   render() {
@@ -37,7 +46,10 @@ class SearchBar extends AbstractComponent {
     const { inputValue, suggestActive } = this.state;
 
     return (
-      <div id="search" className={this.cssClasses('search-bar')}>
+      <div
+        id="search"
+        className={this.cssClasses('search-bar')}
+        ref={this._searchBarRef}>
         <form
           method="GET"
           className={this.cssClasses('search-bar__container')}
@@ -50,7 +62,6 @@ class SearchBar extends AbstractComponent {
             autoComplete="off"
             className={this.cssClasses('search-bar__input')}
             onFocus={event => this.onInputFocus(event)}
-            onBlur={event => this.onInputBlur(event)}
             onChange={event => this.onSearchType(event)}
           />
         </form>
@@ -95,13 +106,32 @@ class SearchBar extends AbstractComponent {
     }
   }
 
-  onInputBlur(event) {
+  /**
+   * Checks if click happened outside and hide the suggest if so
+   *
+   * @param {MouseEvent} event
+   */
+  onSearchOutsideClick(event) {
+    const { current: searchBar } = this._searchBarRef;
+
+    if (
+      event &&
+      event.target &&
+      searchBar &&
+      (event.target === searchBar ||
+        !!(searchBar.compareDocumentPosition(event.target) & 16))
+    ) {
+      return;
+    }
+
     const { currentLocation } = this.props;
-    const { inputValue } = this.state;
+    let { inputValue } = this.state;
 
     if (currentLocation && inputValue.length === 0) {
-      this.setState({ inputValue: currentLocation });
+      inputValue = currentLocation;
     }
+
+    this.setState({ inputValue, suggestActive: false });
   }
 
   onSearchType(event) {
@@ -131,7 +161,7 @@ class SearchBar extends AbstractComponent {
   }
 }
 
-const resourcesSelector = (state, context) => {
+const resourcesSelector = state => {
   return {
     key: state.location ? state.location.title : null,
     currentLocation: state.location ? state.location.title : null,

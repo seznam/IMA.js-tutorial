@@ -1,4 +1,4 @@
-import { Router, CookieStorage } from '@ima/core';
+import { Router, CookieStorage, GenericError } from '@ima/core';
 
 import ForecastService from 'app/model/forecast/ForecastService';
 import GeoCoderService from 'app/model/geocoder/GeoCoderService';
@@ -56,7 +56,12 @@ export default class HomeController extends AbstractController {
       this._router.redirect(this._router.link('home')); // prevent data-mining
     }
 
-    geoCoderPromise.then(geoLocation => {
+    geoCoderPromise = geoCoderPromise.then(geoLocation => {
+      if (!geoLocation) {
+        throw new GenericError(`Location "${location}" wasn't found.`, {
+          status: 404
+        });
+      }
       if (
         location &&
         (typeof lat === 'undefined' ||

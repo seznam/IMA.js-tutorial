@@ -1,37 +1,39 @@
 .forecast-detail {
-    margin: 0px 20px;
-    text-align: center;
+	margin: 0 20px;
 
-    &__ {
+	text-align: center;
 
-        &time {}
+	&__ {
+		&temp {
+			display: block;
 
-        &temp {
-            display: block;
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+			margin: 10px 0;
 
-        &precip {
-            display: flex;
-            align-items: center;
+			font-size: 18px;
+			font-weight: bold;
+		}
 
-            svg {
-                height: 17px;
-                width: 17px;
-                margin-right: 3px;
-            }
+		&precip {
+			display: flex;
 
-            &__rain,
-            &__snow {
-                display: flex;
-                align-items: center;
-            }
+			align-items: center;
 
-            &__rain {
-                margin-right: 10px;
-            }
-        }
-    }
+			svg {
+				margin-right: 3px;
+				width: 17px;
+				height: 17px;
+			}
+
+			&__rain,
+			&__snow {
+				display: flex;
+
+				align-items: center;
+			}
+
+			&__rain {
+				margin-right: 10px;
+			}
+		}
+	}
 }

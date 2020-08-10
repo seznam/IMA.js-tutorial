@@ -29,10 +29,15 @@ export default class HomeView extends AbstractComponent {
 
     return (
       <Fragment>
-        <div className="location">
-          <h1 className="location__title">{location.title}</h1>
+        <div className={this.cssClasses('header')}>
+          <SearchBar />
         </div>
-        <div className="forecast-days">
+        <div className={this.cssClasses('location')}>
+          <h1 className={this.cssClasses('location__title')}>
+            {location.title}
+          </h1>
+        </div>
+        <div className={this.cssClasses('forecast-days')}>
           {forecast.daily.map((day, index) => (
             <ForecastDay
               key={index}

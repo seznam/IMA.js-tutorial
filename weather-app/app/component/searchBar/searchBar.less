@@ -1,44 +1,70 @@
 .search-bar {
+	position: relative;
 
-    &__ {
-        &container {
+	&__ {
+		&input {
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 8px 12px;
+			width: 500px;
+			height: 45px;
 
-        }
+			line-height: 45px;
+		}
 
-        &input {
-            border: 1px solid #CCC;
-            border-radius: 4px;
-            height: 40px;
-            line-height: 40px;
-            width: 500px;
-        }
+		&suggest {
+            display: none;
 
-        &suggest {
+			position: absolute;
+			top: 46px;
+			z-index: 20;
 
+			margin: 0;
+			border-radius: 4px;
+			padding: 0;
+			width: 100%;
 
-            &-- {
-                &active {
+			background: #fff;
 
-                }
+			list-style: none;
+			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.35), 0 1px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
 
-                &loading {
+			&-- {
+				&active {
+                    display: block;
+				}
 
-                }
+				&loading {
+
+				}
+			}
+		}
+
+		&suggest-item {
+			padding: 8px 12px;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: #F9F9F9;
             }
-        }
 
-        &sugges-item {
+			&__ {
+				&name {
+					display: block;
 
+					font-size: 14px;
+					font-weight: bold;
+					line-height: 20px;
+					color: #404040;
+				}
 
-            &__ {
-                &name {
-
-                }
-
-                &district {
-
-                }
+				&district {
+					font-size: 12px;
+					line-height: 18px;
+					color: grey;
+				}
             }
-        }
-    }
+		}
+	}
 }
