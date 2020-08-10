@@ -145,7 +145,7 @@ class SearchBar extends AbstractComponent {
       this.setState({ inputValue });
     }
 
-    setTimeout(() => {
+    this._searchTimeout = setTimeout(() => {
       this.setState({ suggestActive: true, suggestLoading: true });
 
       const { inputValue } = this.state;
