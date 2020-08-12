@@ -1,46 +1,53 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F9F9F9;
-    padding: 16px;
+	display: flex;
+
+	padding: 16px;
+
+	flex-direction: column;
+	align-items: center;
+
+	background-color: #f9f9f9;
 }
 
 .location {
-
-    &__ {
-        &title {
-            text-align: center;
-        }
-    }
+	&__ {
+		&title {
+			text-align: center;
+		}
+	}
 }
 
 .forecast-days {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 0;
-    margin: 0;
-    overflow: scroll;
+	display: flex;
+
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .detail {
-    text-align: center;
+	text-align: center;
 
-    &__ {
+	&__ {
+		&title {
+			font-size: 24px;
+		}
 
-        &title {
-            font-size: 24px;
-        }
+		&list {
+			display: flex;
 
-        &list {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            padding: 0;
-            margin: 0;
-            align-items: center;
-            justify-content: center;
-        }
-    }
+			margin: 0;
+			padding: 0;
+
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 }
